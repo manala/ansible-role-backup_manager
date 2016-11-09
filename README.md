@@ -162,6 +162,21 @@ elao_backup_manager_configs:
     - { role: manala.backup-manager }
 ```
 
+## CRON
+
+Enable CRON with [manala/ansible-role-cron](https://github.com/manala/ansible-role-cron) :
+
+```yaml
+manala_cron_files:
+  - file: backup-manager
+    user: root
+    jobs:
+      - name:   your-backup-name
+        job:    "{{ manala_backup_manager_bin }} --conffile {{ manala_backup_manager_configs_dir }}/your-config-file.conf"
+        minute: 0
+        hour:   3
+```
+
 # Licence
 
 MIT
