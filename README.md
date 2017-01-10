@@ -1,4 +1,4 @@
-# Ansible Role: Backup Manager
+# Ansible Role: Backup Manager [![Build Status](https://travis-ci.org/manala/ansible-role-backup-manager.svg?branch=master)](https://travis-ci.org/manala/ansible-role-backup-manager)
 
 This role will deal with the setup of [backup-manager](https://github.com/sukria/Backup-Manager).
 

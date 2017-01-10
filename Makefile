@@ -58,19 +58,23 @@ dev@jessie:
 ########
 
 test@wheezy: DEBIAN_DISTRIBUTION = wheezy
-test@wheezy: DOCKER_COMMAND      = make test
+test@wheezy: DOCKER_COMMAND      = sh -c 'make test'
 test@wheezy:
 	printf "${COLOR_INFO}Run docker...${COLOR_RESET}\n"
 	$(DOCKER)
 
 test@jessie: DEBIAN_DISTRIBUTION = jessie
-test@jessie: DOCKER_COMMAND      = make test
+test@jessie: DOCKER_COMMAND      = sh -c 'make test'
 test@jessie:
 	printf "${COLOR_INFO}Run docker...${COLOR_RESET}\n"
 	$(DOCKER)
 
-test: test-install
+test: test-install test-configs
 
 test-install:
 	ansible-playbook tests/install.yml --syntax-check
 	ansible-playbook tests/install.yml
+
+test-configs:
+	ansible-playbook tests/configs.yml --syntax-check
+	ansible-playbook tests/configs.yml
