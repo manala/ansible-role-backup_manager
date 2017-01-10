@@ -171,10 +171,10 @@ manala_cron_files:
   - file: backup-manager
     user: root
     jobs:
-      - name:   your-backup-name
+      - name:   backup-manager
         job:    "{{ manala_backup_manager_bin }} --conffile {{ manala_backup_manager_configs_dir }}/your-config-file.conf"
-        minute: 0
-        hour:   3
+        minute: 25
+        hour:   6
 ```
 
 # Licence
