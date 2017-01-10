@@ -115,13 +115,13 @@ Execute hooks before and after backup
 ### MySQL backup example
 
 ```yaml
-elao_backup_manager_configs:
+manala_backup_manager_configs:
   - file:     mysql.conf
-    template: configs/mysql.conf.j2
+    template: configs/mysql.j2
     config:
       - BM_REPOSITORY_CHMOD: 775
       - BM_ARCHIVE_CHMOD:    664
-      
+
       - BM_REPOSITORY_ROOT:  /srv/backup/mysql
       - BM_ARCHIVE_TTL:      5
       - BM_ARCHIVE_PREFIX:   backup
@@ -135,9 +135,9 @@ elao_backup_manager_configs:
 ### Files backup example
 
 ```yaml
-elao_backup_manager_configs:
+manala_backup_manager_configs:
   - file:    uploads.conf
-    template: configs/base.conf.j2
+    template: configs/default.j2
     config:
       - BM_REPOSITORY_CHMOD:           775
       - BM_ARCHIVE_CHMOD:              664
